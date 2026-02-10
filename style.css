@@ -1,0 +1,622 @@
+/* =========================================
+   BASIS & BRANDING
+   ========================================= */
+:root {
+    --logo-red: #be3d60;
+    --logo-red-light: #fdf6f7;
+    --dark: #1a1a1a;
+    --gray: #666666;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Algemene Container */
+.container {
+    max-width: 1100px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 60px 0; /* Compactere witruimte */
+}
+
+/* =========================================
+   NAVIGATIE & HERO
+   ========================================= */
+nav {
+    width: 100%;
+    padding: 15px 0;
+    background: var(--white);
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    width: 90%;
+}
+
+.nav-logo { height: 40px; }
+.nav-links { list-style: none; display: flex; gap: 25px; margin: 0; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; transition: 0.3s; }
+.nav-links a:hover { color: var(--logo-red); }
+
+.hero {
+    width: 100%;
+    text-align: center;
+    padding: 60px 20px; /* Kleiner dan 80px */
+    background-color: var(--logo-red-light);
+}
+
+.hero-logo { max-width: 220px; margin-bottom: 20px; }
+.hero h1 { font-size: 2.8rem; font-weight: 900; color: var(--dark); margin: 0; }
+.hero-subtitle { font-size: 1.1rem; color: #555; max-width: 650px; margin: 15px auto 0; line-height: 1.5; }
+
+/* =========================================
+   SECTIE HEADERS
+   ========================================= */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 2.2rem;
+    color: var(--logo-red);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   GRID & CARDS
+   ========================================= */
+.grid-three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: 0.3s ease;
+}
+
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+
+.icon-circle {
+    width: 100px; height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--logo-red-light);
+    display: flex; align-items: center; justify-content: center;
+}
+
+.icon-circle img { width: 60%; }
+
+.card h2 { color: var(--logo-red); font-size: 1.3rem; margin-bottom: 15px; }
+
+.card-info {
+    text-align: left; font-size: 0.9rem; color: var(--gray);
+    border-top: 1px solid #eee; padding-top: 15px; margin-bottom: 20px;
+}
+
+.btn-card {
+    display: inline-block; padding: 10px 20px;
+    border: 2px solid var(--logo-red); color: var(--logo-red);
+    text-decoration: none; border-radius: 50px; font-weight: 700; transition: 0.3s;
+}
+
+.btn-card:hover { background: var(--logo-red); color: var(--white); }
+
+/* =========================================
+   WAAROM SPEL & VISIE
+   ========================================= */
+.why-play { background: var(--white); }
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.why-item { text-align: center; }
+.why-icon { font-size: 3rem; display: block; margin-bottom: 10px; }
+
+.about-section { background: var(--logo-red-light); }
+.grid-about { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 40px; align-items: center; }
+
+.image-placeholder {
+    width: 100%; max-width: 250px; aspect-ratio: 1/1;
+    background: #ddd; border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.btn-main {
+    display: inline-block; padding: 12px 30px;
+    background: var(--logo-red); color: var(--white);
+    text-decoration: none; border-radius: 50px; font-weight: 700;
+}
+.bruno-foto {
+    width: 40%;           /* De foto vult de breedte van zijn kolom */
+    max-width: 400px;      /* Zodat hij op grote schermen niet té reusachtig wordt */
+    height: auto;          /* Behoudt de verhoudingen */
+    border-radius: 20px;   /* Geeft die mooie afgeronde hoeken die passen bij je cards */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Een zachte schaduw voor diepte */
+    display: block;
+    margin: 0 auto;        /* Centreert de foto als de kolom breder is dan 400px */
+}
+
+/* De container waar de tekst en foto in zitten */
+.grid-about {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Tekst krijgt iets meer ruimte dan de foto */
+    gap: 60px;
+    align-items: center; /* Zorgt dat tekst en foto verticaal mooi uitlijnen */
+}
+
+/* Zorg dat op mobiel de foto onder de tekst komt */
+@media (max-width: 768px) {
+    .grid-about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   CTA & FOOTER
+   ========================================= */
+.cta-content {
+    background: var(--logo-red); color: var(--white);
+    padding: 50px; border-radius: 30px; text-align: center;
+}
+
+.cta-content h2 { color: var(--white); margin-bottom: 15px; }
+.btn-cta {
+    display: inline-block; padding: 15px 35px;
+    background: var(--white); color: var(--logo-red);
+    text-decoration: none; border-radius: 50px; font-weight: 800;
+}
+
+footer { padding: 30px 0; text-align: center; color: var(--gray); border-top: 1px solid #eee; }
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 850px) {
+    .grid-three-col, .why-grid, .grid-about { grid-template-columns: 1fr; text-align: center; }
+    .hero h1 { font-size: 2.2rem; }
+    .nav-container { flex-direction: column; gap: 10px; }
+}
+/* Specifieke styling voor de Visie-pagina */
+.page-content {
+    max-width: 1100px;
+    margin: 60px auto;
+    width: 90%;
+}
+
+.page-header {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--dark);
+}
+
+.subtitle {
+    color: var(--logo-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.visie-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.text-block {
+    margin-bottom: 40px;
+}
+
+.text-block h3 {
+    font-size: 1.8rem;
+    color: var(--logo-red);
+    margin-bottom: 15px;
+}
+
+.focus-box {
+    background: var(--logo-red-light);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid var(--logo-red);
+}
+
+.visie-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 20px 20px 0px var(--logo-red-light); /* Speels kader effect */
+}
+
+/* Mobiel */
+@media (max-width: 900px) {
+    .visie-grid { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 2.5rem; }
+    .visie-image { order: -1; margin-bottom: 40px; } /* Foto boven tekst op mobiel */
+}
+/* --- CONTACT PAGINA SPECIFIEK --- */
+
+/* Centreert de hele main sectie op het scherm */
+.contact-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Zorgt dat de content verticaal in het midden van het scherm staat */
+    padding: 40px 20px;
+}
+
+.contact-card {
+    max-width: 650px;
+    width: 100%;
+    text-align: center;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 30px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.contact-header h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    margin: 10px 0 20px;
+    letter-spacing: -1.5px;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.method-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    width: fit-content;
+}
+
+.method-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--logo-red-light);
+    color: var(--logo-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.method-content a {
+    font-size: 1.3rem;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.method-content a:hover {
+    color: var(--logo-red);
+}
+
+.small-info {
+    margin: 4px 0 0 0;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* Mobiele aanpassing */
+@media (max-width: 600px) {
+    .contact-card { padding: 40px 20px; }
+    .contact-header h1 { font-size: 2.2rem; }
+}
+.triade-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Slechts één kolom, dus alles onder elkaar */
+    gap: 40px;                 /* De ruimte tussen de drie delen */
+    max-width: 700px;          /* Beperk de breedte zodat de tekst niet te lang uitgerekt wordt */
+    margin: 80px auto;         /* Centreer het blok op de pagina */
+    text-align: center;
+}
+
+.triade-item h2 {
+    color: var(--logo-red);
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.triade-item p {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.6;
+}
+/* --- SOLUTION PAGES --- */
+.solution-page {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.solution-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.solution-header .icon-container {
+    margin-bottom: 20px;
+}
+
+.usp-list {
+    list-style: none;
+    padding: 0;
+}
+
+.usp-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 30px;
+}
+
+.usp-list li::before {
+    content: "❄";
+    position: absolute;
+    left: 0;
+	font-size: 1.2rem;       /* Iets groter maken voor de leesbaarheid */
+    color: #5bc0de;
+    font-weight: bold;
+	top: 15px;               /* Zorgt dat het mooi uitlijnt met de eerste regel tekst */
+}
+
+/* --- ACCORDION STYLING --- */
+.case-accordion {
+    background: #f4fbfc; /* Heel licht blauw */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e0f2f7;
+    transition: all 0.3s ease;
+}
+
+./* --- OPVALLENDE CASE ACCORDION --- */
+.case-accordion {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid #5bc0de; /* Duidelijke blauwe rand */
+    box-shadow: 0 10px 30px rgba(91, 192, 222, 0.1); /* Zachte blauwe gloed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 40px 0;
+}
+
+/* Subtiele animatie als je met de muis over de case gaat */
+.case-accordion:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(91, 192, 222, 0.2);
+}
+
+.case-accordion summary {
+    padding: 30px;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #ffffff, #f4fbfc); /* Subtiel verloop */
+}
+
+/* Verberg het standaard driehoekje van de browser */
+.case-accordion summary::-webkit-details-marker { display: none; }
+
+.case-accordion h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+    flex: 1;
+    margin-left: 20px;
+}
+
+/* Het plus-icoon stylen als een knop */
+.expand-icon {
+    width: 40px;
+    height: 40px;
+    background: #5bc0de;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+}
+
+/* Animatie van het icoontje wanneer het element OPEN staat */
+.case-accordion[open] .expand-icon {
+    transform: rotate(45deg); /* Plus wordt een kruisje */
+    background: #46b8da;
+}
+
+.case-label {
+    background: #2b8f33;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.case-content {
+    padding: 0 30px 40px 30px;
+    border-top: 1px solid #f0f0f0;
+    animation: fadeIn 0.5s ease; /* Zachte verschijning van de tekst */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.case-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.case-photo {
+    aspect-ratio: 4/3;
+    background: #ddd; /* Placeholder kleur */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.case-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobiel */
+@media (max-width: 600px) {
+    .case-gallery { grid-template-columns: 1fr; }
+}
+
+/* --- VONKEN THEMA SPECIFIEK --- */
+
+/* Verander de bullet points naar vuurtjes/vonken op de vonken pagina */
+.page-vonken .usp-list li::before {
+    content: "🔥"; /* Of gebruik "⚡" voor een flits */
+    color: #d9534f;
+}
+
+/* De rode accentkleur voor de icoon-container */
+.sparks .icon-container {
+    border-color: #d9534f;
+    background-color: rgba(217, 83, 79, 0.05);
+}
+
+/* De accordion voor Vonken rood maken */
+.sparks-theme {
+    border-color: #d9534f !important;
+    box-shadow: 0 10px 30px rgba(217, 83, 79, 0.1) !important;
+}
+
+.sparks-theme .case-label {
+    background: #d9534f !important;
+}
+
+.sparks-theme .expand-icon {
+    background: #d9534f !important;
+}
+
+.sparks-theme summary {
+    background: linear-gradient(to right, #ffffff, #fdf6f7) !important;
+}
+
+/* Achtergrond voor de CTA onderaan */
+.sparks-bg {
+    background-color: #fdf6f7;
+}
+
+/* --- BODEMLAGEN THEMA SPECIFIEK --- */
+
+.page-layers .usp-list li::before {
+    content: "🌱"; /* Een zaadje/plantje voor groei en fundament */
+    color: #8a6d3b;
+}
+
+/* Accentkleur bruin */
+.layers .icon-container {
+    border-color: #8a6d3b;
+    background-color: rgba(138, 109, 59, 0.05);
+}
+
+.layers-bg {
+    background-color: #fcfaf5; /* Zacht beige */
+}
+
+/* Testimonials Styling */
+.layers-theme {
+    border: 2px solid #8a6d3b;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(138, 109, 59, 0.1);
+}
+
+.case-header-simple {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.testimonials-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.testimonial-item {
+    margin: 0;
+    padding: 20px;
+    border-left: 4px solid #eee;
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-item.highlight {
+    border-left-color: #8a6d3b;
+    background: #fcfaf5;
+    border-radius: 0 15px 15px 0;
+}
+
+.testimonial-item p {
+    margin-bottom: 10px;
+}
+
+.testimonial-item cite {
+    display: block;
+    font-weight: 700;
+    font-style: normal;
+    color: #333;
+    font-size: 0.9rem;
+}
